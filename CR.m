@@ -1,9 +1,11 @@
 F=1e-2;
-proc=1; % 1: semi-Dirac; 2: massive; 3: massless
-px0=0;
-py0=1e-4;
+proc=2; % 1: semi-Dirac; 2: massive; 3: massless
+px0=-1;
+py0=0;
 f=@(x,y)CR_diff(x,y,F,proc);
-[T,Y]=ode45(f,[0 5000*2*pi],[px0 py0]);
+
+options=['RelTol',1e-16,'AbsTol',[1e-16 1e-16]];
+[T,Y]=ode113(f,[0 300*2*pi],[px0 py0],options);
 figure
 set(gcf,'color','w','position',[2000 280 560 630])
 subplot(3,1,1)
