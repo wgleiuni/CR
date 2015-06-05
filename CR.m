@@ -1,5 +1,5 @@
-F=1e-2;
-proc=2; % 1: semi-Dirac; 2: massive; 3: massless
+F=1e-0;
+proc=3; % 1: semi-Dirac; 2: massive; 3: massless
 px0=-1;
 py0=0;
 f=@(x,y)CR_diff(x,y,F,proc);
