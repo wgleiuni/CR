@@ -36,10 +36,14 @@ class RK4 : protected Particle
         RK4();
     protected:
         void onestep();
-        double t_,h_;
+        void lya();
+        double t_,h_,lya1_,lya2_;
+        int lN_;
     private:
+        void orth();
         double dK(int,double,double,double);
-        double k_[4],l_[4];
+        double dD(int,double,double);
+        double k_[4],l_[4],lKx_[2],lKy_[2];
 };
 
 class CR : protected RK4
@@ -49,7 +53,7 @@ class CR : protected RK4
         void go();
         void record();
     private:
-        std::ofstream out_;
+        std::ofstream out_,out_lya_;
         int numdt_,num_;
 };
 
