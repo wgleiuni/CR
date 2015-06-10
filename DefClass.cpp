@@ -255,5 +255,5 @@ void CR::go()
 //            }
         }
     }
-    out_lya_ << lya1_/lN_ << "\t" << lya2_/lN_ << std::endl;
+    out_lya_ << lya1_/(h_*lN_) << "\t" << lya2_/(h_*lN_) << std::endl;
 }
