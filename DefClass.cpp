@@ -129,16 +129,21 @@ double RK4::dD(int N,double dKx,double dKy)
         case 2:
             switch (N) {
                 case 1:
+                    out=-dKy;
                     break;
                 case 2:
+                    out=dKx;
                     break;
             }
             break;
         case 3:
+            temp=sqrt(pow(Kx_,2.0)+pow(Ky_,2.0));
             switch (N) {
                 case 1:
+                    out=Kx_*Ky_/pow(temp,3.0)*dKx+(pow(Ky_,2.0)/pow(temp,3.0)-1/temp)*dKy;
                     break;
                 case 2:
+                    out=(1/temp-pow(Kx_,2.0)/pow(temp,3.0))*dKx-Kx_*Ky_/pow(temp,3.0)*dKy;
                     break;
             }
             break;
