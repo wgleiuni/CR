@@ -73,26 +73,40 @@ void RK4::orth()
 
 double RK4::dK(int N,double tKx,double tKy,double t)
 {
-    double out,temp;
+    double out,temp,rate;
+    
+    if (t<5.0*2.0*M_PI)
+    {
+        rate=0.0;
+    }
+    else if (t<10.0*2.0*M_PI)
+    {
+        rate=1.0/(5*2*M_PI)*(t-5*2*M_PI);
+    }
+    else
+    {
+        rate=1.0;
+    }
+
     switch (Mode_) {
         case 1:
             temp=sqrt(pow(tKx,4.0)+pow(tKy,2.0));
             switch (N) {
                 case 1:
-                    out=-tKy/2.0/temp-F_*cos(Omega_*t);
+                    out=-tKy/2.0/temp-F_*rate*cos(Omega_*t);
                     break;
                 case 2:
-                    out=pow(tKx,3.0)/temp-F_*sin(Omega_*t);
+                    out=pow(tKx,3.0)/temp-F_*rate*sin(Omega_*t);
                     break;
             }
             break;
         case 2:
             switch (N) {
                 case 1:
-                    out=-tKy-F_*cos(Omega_*t);
+                    out=-tKy-F_*rate*cos(Omega_*t);
                     break;
                 case 2:
-                    out=tKx-F_*sin(Omega_*t);
+                    out=tKx-F_*rate*sin(Omega_*t);
                     break;
             }
             break;
@@ -100,10 +114,10 @@ double RK4::dK(int N,double tKx,double tKy,double t)
             temp=sqrt(pow(tKx,2.0)+pow(tKy,2.0));
             switch (N) {
                 case 1:
-                    out=-tKy/temp-F_*cos(Omega_*t);
+                    out=-tKy/temp-F_*rate*cos(Omega_*t);
                     break;
                 case 2:
-                    out=tKx/temp-F_*sin(Omega_*t);
+                    out=tKx/temp-F_*rate*sin(Omega_*t);
                     break;
             }
             break;
