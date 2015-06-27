@@ -1,21 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  main.cpp
- *
- *    Description:  
- *
- *        Version:  1.0
- *        Created:  06/05/2015 09:00:56 AM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Dr. Fritz Mehner (fgm), mehner.fritz@fh-swf.de
- *   Organization:  FH Südwestfalen, Iserlohn
- *
- * =====================================================================================
- */
-
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>

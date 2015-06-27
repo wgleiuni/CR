@@ -1,21 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  DefClass.cpp
- *
- *    Description:  
- *
- *        Version:  1.0
- *        Created:  06/05/2015 07:56:39 AM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Dr. Fritz Mehner (fgm), mehner.fritz@fh-swf.de
- *   Organization:  FH Südwestfalen, Iserlohn
- *
- * =====================================================================================
- */
-
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
@@ -75,18 +57,20 @@ double RK4::dK(int N,double tKx,double tKy,double t)
 {
     double out,temp,rate;
     
-    if (t<5.0*2.0*M_PI)
-    {
-        rate=0.0;
-    }
-    else if (t<10.0*2.0*M_PI)
-    {
-        rate=1.0/(5*2*M_PI)*(t-5*2*M_PI);
-    }
-    else
-    {
-        rate=1.0;
-    }
+//    if (t<5.0*2.0*M_PI)
+//    {
+//        rate=0.0;
+//    }
+//    else if (t<10.0*2.0*M_PI)
+//    {
+//        rate=1.0/(5*2*M_PI)*(t-5*2*M_PI);
+//    }
+//    else
+//    {
+//        rate=1.0;
+//    }
+
+    rate=1.0;
 
     switch (Mode_) {
         case 1:

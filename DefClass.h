@@ -1,21 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  DefClass.h
- *
- *    Description:  
- *
- *        Version:  1.0
- *        Created:  06/05/2015 07:43:50 AM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Dr. Fritz Mehner (fgm), mehner.fritz@fh-swf.de
- *   Organization:  FH Südwestfalen, Iserlohn
- *
- * =====================================================================================
- */
-
 #ifndef DEFCLASS_H
 #define DEFCLASS_H
 #include <fstream>

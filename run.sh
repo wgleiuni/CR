@@ -1,8 +1,9 @@
 #!/bin/bash
 
 I=1
+Mode=1
 # 1: semi-Dirac; 2: massive; 3: massless
-./a.out $I 3 -1 0 0.02 1 0.001 100 100000
+./a.out $I $Mode -1 0 0.01 1 0.001 100 100000
 
 if [ -e "D$I.mat" ]
 then
